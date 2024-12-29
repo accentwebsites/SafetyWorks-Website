@@ -1,56 +1,58 @@
-interface ComplianceSectionProps {
-    className?: string;
+import Image from 'next/image'
+
+const complianceFeatures = [
+  {
+    title: "Strict Adherence to Regulations",
+    description: "We follow all relevant Australian Standards, including AS/NZS 4576 and AS/NZS 1576, ensuring that our scaffolding meets the necessary safety requirements."
+  },
+  {
+    title: "Comprehensive Training & Certification",
+    description: "Our team is fully trained and certified in the latest scaffolding safety practices, ensuring each project is handled with expert care."
+  },
+  {
+    title: "Ongoing Safety Inspections",
+    description: "Regular inspections are conducted to maintain the highest level of safety and compliance throughout the project lifecycle."
   }
-  
-  export default function ComplianceSection({ className = '' }: ComplianceSectionProps) {
-    return (
-      <section className={`${className}`}>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-          Compliance and Standards at Safety Works Scaffold
-        </h2>
-  
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
-          At Safety Works Scaffold, we are dedicated to providing high-quality
-          scaffolding solutions that comply with all relevant industry laws and safety
-          standards. Our focus on legal compliance ensures that every project is
-          delivered with the utmost care for safety and efficiency.
-        </p>
-  
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Legal Compliance */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4">Legal Compliance</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Our company strictly adheres to the Work Health and Safety Act 2011 and Work Health and
-              Safety Regulations 2017 which guides our operation practices, project execution, and staff training
-              programs.
-            </p>
-          </div>
-  
-          {/* Commitment to Health and Safety */}
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4">Commitment to Health and Safety</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Our scaffolding is built to last, ensuring safety and efficiency for all projects.
-              We maintain rigorous safety standards and regular inspections to ensure compliance
-              with all regulations.
-            </p>
-          </div>
-        </div>
-  
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Safety Stats or Highlights */}
-          {['100%', '15+', '0'].map((stat, index) => (
-            <div key={index} className="bg-teal-500 text-white rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold mb-2">{stat}</div>
-              <div className="text-sm">
-                {index === 0 && 'Compliance Rate'}
-                {index === 1 && 'Years Experience'}
-                {index === 2 && 'Safety Incidents'}
+]
+
+export default function ComplianceSection() {
+  return (
+    <section className="py-16">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 className="text-3xl font-bold mb-6">Compliance and Safety Commitment</h2>
+          <p className="text-gray-600 mb-8">
+            At Saftey Works Scaffolding, we pride ourselves on adhering to the highest
+            industry standards for scaffolding safety and compliance. We ensure that all
+            projects are carried out with precision, prioritizing the safety of our clients,
+            employees, and the public.
+          </p>
+          <div className="space-y-6">
+            {complianceFeatures.map((feature, index) => (
+              <div key={index} className="flex gap-4">
+                <div className="flex-shrink-0 w-6 h-6 mt-1">
+                  <div className="w-2 h-2 bg-teal-400 rounded-full" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-teal-400 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button className="mt-8 bg-teal-400 text-white px-6 py-3 rounded-md hover:bg-teal-500 transition-colors">
+            Learn More
+          </button>
         </div>
-      </section>
-    );
-  }
+        <div className="relative h-[500px]">
+          <Image
+            src="/api/placeholder/600/500"
+            alt="Safety compliance"
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+  )
+}

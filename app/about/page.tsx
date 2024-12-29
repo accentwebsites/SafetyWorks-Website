@@ -1,11 +1,11 @@
 import Image from "next/image";
-import HeroSection from "@/components/HeroSection";
-import SafetyCommitmentSection from "@/components/SafetyCommitmentSection";
-import ComplianceSection from "@/components/ComplianceSection";
-import TimelineSection from "@/components/TimelineSection";
-import TeamSection from "@/components/TeamSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import CTASection from "@/components/CTASection";
+import HeroSection from "@/components/about/HeroSection";
+import SafetyCommitmentSection from "@/components/about/SafetyCommitmentSection";
+import ComplianceSection from "@/components/about/ComplianceSection";
+import TimelineSection from "@/components/about/TimelineSection";
+import TeamSection from "@/components/about/TeamSection";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
+import CTASection from "@/components/about/CTASection";
 
 export const metadata = {
   title: 'About Us - Safety Works Scaffold',
